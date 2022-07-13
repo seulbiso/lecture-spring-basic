@@ -9,12 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    @Autowired
+
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -56,6 +55,6 @@ public class MemberService {
      * ID 조회
      */
     public Optional<Member> findOne(Long memberId){
-        return memberRepository.findByID(memberId);
+        return memberRepository.findById(memberId);
     }
 }
